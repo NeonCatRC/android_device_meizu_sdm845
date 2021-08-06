@@ -1,6 +1,3 @@
-# FastCharge HAL
-genfscon sysfs /devices/platform/vendor/vendor:switch_charger/fastcharging                  u:object_r:sysfs_charger:s0
-
 # LiveDisplay HAL
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display@17/display/lut                    u:object_r:sysfs_livedisplay:s0
 
