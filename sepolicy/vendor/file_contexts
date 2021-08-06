@@ -1,6 +1,3 @@
-# FastCharge HAL
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@[0-9]\.[0-9]-service\.meizu_sdm845          u:object_r:hal_lineage_fastcharge_default_exec:s0
-
 # Touch HAL
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@[0-9]\.[0-9]-service\.meizu_sdm845          u:object_r:hal_lineage_touch_default_exec:s0
 
