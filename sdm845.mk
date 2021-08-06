@@ -162,11 +162,8 @@ PRODUCT_COPY_FILES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.base@1.0_system \
     libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
+    libhwbinder
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -245,7 +242,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
-    android.hardware.power.stats@1.0-service.mock
+		android.hardware.power.stats@1.0-service.mock
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
@@ -307,9 +304,12 @@ PRODUCT_PACKAGES += \
 
 # VNDK-SP
 PRODUCT_PACKAGES += \
-PRODUCT_USE_VNDK_OVERRIDE := false
+    vndk-sp \
+    com.android.vndk.current.on_vendor
 
-    $(LOCAL_PATH)/vndk/vndksp.libraries.30.txt:$(TARGET_COPY_OUT_SYSTEM)/apex/com.android.vndk.current/etc/vndksp.libraries.30.txt
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v28/arm64/arch-arm64-armv8-a/shared/vndk-sp/libbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbv28.so \
+    $(LOCAL_PATH)/vndk/vndksp.libraries.30.txt:$(TARGET_COPY_OUT_VENDOR)/apex/com.android.vndk.current.on_vendor/etc/vndksp.libraries.30.txt
 
 # Native libraries whitelist
 PRODUCT_COPY_FILES += \
