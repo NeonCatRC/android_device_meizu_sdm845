@@ -1,11 +1,6 @@
-/*
- * Copyright (C) 2020 The MoKee Open Source Project
- *
- * SPDX-License-Identifier: Apache-2.0
- *
- */
 
-package org.lineageos.device.parts;
+
+package org.lineageos.settings.doze;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -13,7 +8,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -23,20 +17,16 @@ class LightListener implements SensorEventListener {
     private static final String TAG = "LightListener";
     private static final boolean DEBUG = false;
 
-    private static final long COMPARATIVE_LUX_VALUE = 375;
-    private static final int SENSOR_DELAY_CUSTOM = 100000000; // 10s
-
-    private final AODService mService;
+    private final DozeService mService;
 
     private final SensorManager mSensorManager;
     private final Sensor mSensor;
-
     private ExecutorService mExecutorService;
-
     private boolean mIsListening = false;
-    private boolean mBoostAOD = false;
+    
+    public float currentLux = 0;
 
-    LightListener(AODService service) {
+    LightListener(DozeService service) {
         mService = service;
         mSensorManager = (SensorManager) service.getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT, false);
@@ -49,12 +39,8 @@ class LightListener implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.values[0] > COMPARATIVE_LUX_VALUE) {
-            mBoostAOD = true;
-        } else {
-            mBoostAOD = false;
-        }
-        mService.onChangedLuxState(mBoostAOD);
+        currentLux = event.values[0];
+        mService.onChangedLuxState(currentLux);
     }
 
     @Override
@@ -62,11 +48,12 @@ class LightListener implements SensorEventListener {
     }
 
     void enable() {
+        int READINGRATE = 4000000; // time in us
         if (mIsListening) return;
         if (DEBUG) Log.d(TAG, "Enabling");
         mIsListening = true;
         submit(() -> {
-            mSensorManager.registerListener(this, mSensor, SENSOR_DELAY_CUSTOM);
+            mSensorManager.registerListener(this, mSensor, READINGRATE);
         });
     }
 
