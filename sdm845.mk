@@ -306,10 +306,10 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3-service.meizu_sdm845
 
 # VNDK-SP
-PRODUCT_PACKAGES += \
 PRODUCT_USE_VNDK_OVERRIDE := false
 
-    $(LOCAL_PATH)/vndk/vndksp.libraries.30.txt:$(TARGET_COPY_OUT_SYSTEM)/apex/com.android.vndk.current/etc/vndksp.libraries.30.txt
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/vndksp.libraries.30.txt:$(TARGET_COPY_OUT_VENDOR)/apex/com.android.vndk.current.on_vendor/etc/vndksp.libraries.30.txt
 
 # Native libraries whitelist
 PRODUCT_COPY_FILES += \
