@@ -12,16 +12,32 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit from m1882 device
 $(call inherit-product, device/meizu/sdm845/m1882/m1882.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common ppui stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Credits to XiNGRZ
 
-PRODUCT_NAME := lineage_m1882
+PRODUCT_NAME := aosp_m1882
 PRODUCT_BRAND := Meizu
 PRODUCT_DEVICE := m1882
 PRODUCT_MANUFACTURER := Meizu
 PRODUCT_MODEL := 16th
+
+# FOD Animation
+EXTRA_FOD_ANIMATIONS := true
+
+#PPUI Stuff
+TARGET_FACE_UNLOCK_SUPPORTED = true
+CUSTOM_BUILD_TYPE=OFFICIAL
+TARGET_GAPPS_ARCH := arm64
+
+#PPUI Props
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.ppui.device_name=Meizu 16 TH \
+ro.ppui.version=3.8 \
+ro.ppui.version_code=Hikaru \
+ro.ppui.is_official=true \
+ro.ppui.maintainer_name=dogukangunacti
 
 PRODUCT_GMS_CLIENTID_BASE := android-meizu
 
