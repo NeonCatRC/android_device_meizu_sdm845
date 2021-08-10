@@ -23,9 +23,6 @@ PRODUCT_DEVICE := m1882
 PRODUCT_MANUFACTURER := Meizu
 PRODUCT_MODEL := 16th
 
-# FOD Animation
-EXTRA_FOD_ANIMATIONS := true
-
 #PPUI Stuff
 TARGET_FACE_UNLOCK_SUPPORTED = true
 CUSTOM_BUILD_TYPE=OFFICIAL
@@ -33,7 +30,7 @@ TARGET_GAPPS_ARCH := arm64
 
 #PPUI Props
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.ppui.device_name=Meizu 16 TH \
+ro.ppui.device_name=Meizu16TH \
 ro.ppui.version=3.8 \
 ro.ppui.version_code=Hikaru \
 ro.ppui.is_official=true \
