@@ -330,9 +330,6 @@ PRODUCT_PACKAGES += \
     WfdService \
     WfdCommon
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
