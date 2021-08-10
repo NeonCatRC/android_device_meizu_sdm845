@@ -334,10 +334,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
-# Parts
-PRODUCT_PACKAGES += \
-    MzSDM845Parts
-
 # KeyHandler
 PRODUCT_PACKAGES += \
     KeyHandler
