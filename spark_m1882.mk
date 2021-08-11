@@ -13,28 +13,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 $(call inherit-product, device/meizu/sdm845/m1882/m1882.mk)
 
 # Inherit some common ppui stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/spark/config/common_full_phone.mk)
 
 # Credits to XiNGRZ
 
-PRODUCT_NAME := aosp_m1882
+PRODUCT_NAME := spark_m1882
 PRODUCT_BRAND := Meizu
 PRODUCT_DEVICE := m1882
 PRODUCT_MANUFACTURER := Meizu
 PRODUCT_MODEL := 16th
 
-#PPUI Stuff
-TARGET_FACE_UNLOCK_SUPPORTED = true
-CUSTOM_BUILD_TYPE=OFFICIAL
-TARGET_GAPPS_ARCH := arm64
-
-#PPUI Props
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.ppui.device_name=Meizu16TH \
-ro.ppui.version=3.8 \
-ro.ppui.version_code=Hikaru \
-ro.ppui.is_official=true \
-ro.ppui.maintainer_name=dogukangunacti
+#Spark
+TARGET_FACE_UNLOCK_SUPPORTED := true
+WITH_FOD_ANIMATIONS := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-meizu
 
