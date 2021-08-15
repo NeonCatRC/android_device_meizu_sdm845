@@ -334,6 +334,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
+# Parts
+PRODUCT_PACKAGES += \
+    MeizuParts
+
 # KeyHandler
 PRODUCT_PACKAGES += \
     KeyHandler
