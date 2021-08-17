@@ -99,6 +99,3 @@ ro.frp.pst=/dev/block/platform/soc/1d84000.ufshc/by-name/frp
 
 # Doze
 ro.sensor.proximity=true
-
-# Spark
-ro.spark.maintainer=blackrow67
