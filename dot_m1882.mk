@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 $(call inherit-product, device/meizu/sdm845/m1882/m1882.mk)
 
 # Inherit some common ppui stuff.
-$(call inherit-product, vendor/dot/config/common_full_phone.mk)
+$(call inherit-product, vendor/dot/config/common.mk)
 
 # Credits to XiNGRZ
 
