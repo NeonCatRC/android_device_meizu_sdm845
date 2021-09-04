@@ -341,7 +341,3 @@ PRODUCT_PACKAGES += \
 # KeyHandler
 PRODUCT_PACKAGES += \
     KeyHandler
-
-# FOD specific of crDroid
-EXTRA_FOD_ANIMATIONS := true
-TARGET_HAS_FOD := true
