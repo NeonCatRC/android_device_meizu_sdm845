@@ -34,7 +34,7 @@ uint32_t getFodZOrder(uint32_t z, bool touched) {
         z = (z & 1) << 0x10 | 0xbb000000;
         set(HBM_ENABLE_PATH, 1);
     } else {
-        set(HBM_ENABLE_PATH, 2);
+        set(HBM_ENABLE_PATH, 0);
     }
 
     return z;
