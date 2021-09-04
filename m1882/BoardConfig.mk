@@ -91,6 +91,11 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 USE_CAMERA_STUB := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 
+# HALS
+SRC_AUDIO_HAL_DIR := hardware/qcom-caf/sdm845/audio
+SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/sdm845/display
+SRC_MEDIA_HAL_DIR := hardware/qcom-caf/sdm845/media
+
 # Charger
 WITH_LINEAGE_CHARGER := false
 

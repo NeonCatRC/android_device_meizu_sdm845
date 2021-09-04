@@ -68,6 +68,10 @@ TARGET_SCREEN_WIDTH := 1080
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# Soong
+PRODUCT_BOARD_PLATFORM := sdm845
+PRODUCT_USES_QCOM_HARDWARE := true
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
