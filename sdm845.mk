@@ -338,7 +338,7 @@ PRODUCT_PACKAGES += \
 
 # Parts
 PRODUCT_PACKAGES += \
-    MzSDM845Parts
+    MeizuParts
 
 # KeyHandler
 PRODUCT_PACKAGES += \
