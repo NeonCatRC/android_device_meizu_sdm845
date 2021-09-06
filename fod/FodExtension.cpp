@@ -18,8 +18,6 @@
 
 #include <fstream>
 
-#define HBM_ENABLE_PATH "/sys/class/meizu/lcm/display/hbm"
-
 /*
  * Write value to path and close file.
  */
@@ -32,9 +30,6 @@ static void set(const std::string& path, const T& value) {
 uint32_t getFodZOrder(uint32_t z, bool touched) {
     if (touched) {
         z = (z & 1) << 0x10 | 0xbb000000;
-        set(HBM_ENABLE_PATH, 1);
-    } else {
-        set(HBM_ENABLE_PATH, 0);
     }
 
     return z;
