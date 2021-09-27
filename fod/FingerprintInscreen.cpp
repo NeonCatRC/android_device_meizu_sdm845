@@ -38,6 +38,7 @@
 
 #define NOTIFY_HAL_DELAY 100
 
+#define HBM_ENABLE_PATH "/sys/class/meizu/lcm/display/hbm"
 #define BOOST_ENABLE_PATH "/sys/class/meizu/fp/qos_set"
 #define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
 
@@ -121,6 +122,7 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 Return<void> FingerprintInscreen::onPress() {
     acquire_wake_lock(PARTIAL_WAKE_LOCK, LOG_TAG);
     mFingerPressed = true;
+    set(HBM_ENABLE_PATH, 1);
     set(BOOST_ENABLE_PATH, 1);
     std::thread([this]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(NOTIFY_HAL_DELAY));
@@ -135,6 +137,8 @@ Return<void> FingerprintInscreen::onRelease() {
     mFingerPressed = false;
     this->mSteller->notifyHal(TOUCH_NOTIFY_FINGER_STATE, TOUCH_NOTIFY_FINGER_UP, CMD_FLAG);
     release_wake_lock(LOG_TAG);
+    set(HBM_ENABLE_PATH, 0);
+    LOG(INFO) << "onPress: HBM is off!";
     return Void();
 }
 
