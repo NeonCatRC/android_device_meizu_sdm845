@@ -36,6 +36,7 @@ debug.sf.latch_unsignaled=1
 qemu.hw.mainkeys=0
 persist.demo.hdmirotationlock=false
 debug.sf.enable_hwc_vds=1
+ro.surface_flinger.has_HDR_display=true
 
 # Data modules
 ro.vendor.use_data_netmgrd=true
