@@ -34,8 +34,8 @@ TARGET_GAPPS_ARCH := arm64
 #PPUI Props
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.ppui.device_name=Meizu 16TH \
-ro.ppui.version=3.9 \
-ro.ppui.version_code=Eternal \
+ro.ppui.version=3.10 \
+ro.ppui.version_code=Azrael \
 ro.ppui.is_official=true \
 ro.ppui.maintainer_name=dogukangunacti
 
