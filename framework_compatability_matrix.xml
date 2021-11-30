@@ -1,6 +1,6 @@
 <compatibility-matrix version="1.0" type="framework">
     <hal format="hidl">
-        <name>vendor.aospa.biometrics.fingerprint.inscreen</name>
+        <name>vendor.dot.biometrics.fingerprint.inscreen</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
